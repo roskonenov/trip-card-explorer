@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 240px;
 
     &:hover {
         transform: translateY(-4px);
@@ -66,5 +67,23 @@
                 background-color: #1e40af;
             }
         }
+    }
+}
+
+@media (max-width: 900px) {
+    .trip-card {
+        flex: 1 0 calc(45% - 20px);
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .trip-card {
+        flex: 1 0 calc(100% - 20px);
+        width: 100%;
+    }
+
+    .trip-card .trip-image {
+        height: 220px;
     }
 }
