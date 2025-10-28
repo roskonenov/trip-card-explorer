@@ -1,13 +1,11 @@
 import './App.css'
-import useFetchTrips from './hooks/useFetchTrips'
+import TripList from './pages/TripList'
 
 function App() {
-  const {trips, loading, error} = useFetchTrips();
-  console.log(trips);
   
   return (
     <>
-      
+      <TripList />
     </>
   )
 }

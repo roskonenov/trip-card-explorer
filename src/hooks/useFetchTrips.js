@@ -10,9 +10,10 @@ export default function useFetchTrips() {
             .then(res => {
                 if (!res.ok) throw new Error('Failed to fetch trips');
                 return res.json();
-            }).then(setTrips)
+            })
+            .then(data => setTrips(data.trips))
             .catch(setError)
-            .finally(setLoading(false))
+            .finally(() => setLoading(false))
     }, []);
     return { trips, loading, error };
 }
