@@ -6,11 +6,13 @@ import './TripList.scss'
 import { FaLongArrowAltUp } from "react-icons/fa";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import TripModal from '../components/TripModal';
 
 const TripList = () => {
     const { trips, loading, error } = useFetchTrips();
     const [searchQuery, setSearchQuery] = useState('');
     const [sortByRating, setSortByRating] = useState('');
+    const [selectedTrip, setSelectedTrip] = useState(null);
 
     const filteredTrips = trips
         .filter(t => t.name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -43,14 +45,17 @@ const TripList = () => {
                         {filteredTrips.map((trip) => (
                             <TripCard
                                 key={trip.id}
-                                name={trip.name}
-                                image={trip.image}
-                                description={trip.description}
-                                rating={trip.rating}
+                                trip={trip}
+                                onMoreInfo={setSelectedTrip}
                             />
                         ))}
                     </section>
             }
+
+            {selectedTrip &&
+                <TripModal
+                    trip={selectedTrip}
+                    onClose={() => setSelectedTrip(null)} />}
         </div>
     )
 }

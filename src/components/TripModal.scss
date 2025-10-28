@@ -1,0 +1,80 @@
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #37373779;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.modal {
+  background: #c2f8fa;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 1.5rem 2rem;
+  animation: slideUp 0.25s ease forwards;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    color: #222;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(15px);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
