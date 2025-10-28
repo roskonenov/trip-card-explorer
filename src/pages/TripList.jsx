@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useFetchTrips from '../hooks/useFetchTrips'
 import TripCard from '../components/TripCard';
+import Spinner from '../components/Spinner';
 import './TripList.scss'
 import { FaLongArrowAltUp } from "react-icons/fa";
 import { FaLongArrowAltDown } from "react-icons/fa";
@@ -36,17 +37,20 @@ const TripList = () => {
                             <FaLongArrowAltDown className='icon' />}
                 </button>
             </div>
-            <section className='trip-list'>
-                {filteredTrips.map((trip) => (
-                    <TripCard
-                        key={trip.id}
-                        name={trip.name}
-                        image={trip.image}
-                        description={trip.description}
-                        rating={trip.rating}
-                    />
-                ))}
-            </section>
+            {loading ? <Spinner />
+                : error ? <p className='error-message'>Error loading trips!</p>
+                    : <section className='trip-list'>
+                        {filteredTrips.map((trip) => (
+                            <TripCard
+                                key={trip.id}
+                                name={trip.name}
+                                image={trip.image}
+                                description={trip.description}
+                                rating={trip.rating}
+                            />
+                        ))}
+                    </section>
+            }
         </div>
     )
 }
