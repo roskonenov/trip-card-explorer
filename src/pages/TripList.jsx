@@ -35,8 +35,8 @@ const TripList = () => {
                     {sortByRating === '' ?
                         <FaStar className='icon' /> :
                         sortByRating === 'asc' ?
-                            <FaLongArrowAltUp className='icon' /> :
-                            <FaLongArrowAltDown className='icon' />}
+                            <FaLongArrowAltDown className='icon' /> :
+                            <FaLongArrowAltUp className='icon' />}
                 </button>
             </div>
             {loading ? <Spinner />

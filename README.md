@@ -1,16 +1,57 @@
-# React + Vite
+# 🌍 Trip Card Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small **React web application** that displays a list of “trip cards” fetched from a mock JSON API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- Fetches trip data from a local `data.json` file
+- Displays trips in a responsive grid of cards
+- Each card includes image, name, rating, and short description
+- “More Info” button opens a modal with full details
+- Search trips by name
+- Toggle to sort trips by rating
+- Graceful handling of loading and error states
+- Clean, modern layout using **SCSS**
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🧱 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ **React (Vite)**
+- 💅 **SASS / SCSS**
+- 🧠 **React Hooks** (`useState`, `useEffect`)
+- 📁 **Modular component architecture**
+
+---
+
+## ⚙️ Installation & Run
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/roskonenov/trip-card-explorer.git
+cd trip-card-explorer
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run locally
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
+---
+
+## 👤 Author
+
+Rosen Nenov  
+roskonenov@gmail.com
