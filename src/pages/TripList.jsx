@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import useFetchTrips from '../hooks/useFetchTrips'
 import TripCard from '../components/TripCard';
 import Spinner from '../components/Spinner';
@@ -14,9 +14,9 @@ const TripList = () => {
     const [sortByRating, setSortByRating] = useState('');
     const [selectedTrip, setSelectedTrip] = useState(null);
 
-    const filteredTrips = trips
+    const filteredTrips = useMemo(() => [...trips]
         .filter(t => t.name.toLowerCase().includes(searchQuery.toLowerCase()))
-        .sort((a, b) => sortByRating === '' ? 0 : sortByRating === 'asc' ? a.rating - b.rating : b.rating - a.rating);
+        .sort((a, b) => sortByRating === '' ? 0 : sortByRating === 'asc' ? a.rating - b.rating : b.rating - a.rating), [trips, searchQuery, sortByRating]);
 
     return (
         <div className='container'>
